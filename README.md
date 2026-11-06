@@ -1,14 +1,13 @@
 
-
 # Windows DNS & Active Directory Troubleshooting Lab
 
 ## Project Overview
 
 I completed this hands-on lab to improve my Windows troubleshooting and networking skills.
 
-Using Windows virtual machines in Microsoft Azure, I simulated DNS issues, investigated connection failures, and practiced resolving problems with PowerShell.
+Using Windows virtual machines hosted in Microsoft Azure, I simulated DNS failures, investigated connectivity issues, and practiced resolving problems using PowerShell.
 
-My goal was to get more comfortable troubleshooting the types of issues that come up in real IT Help Desk, Desktop Support, and System Administration environments.
+My goal was to gain practical experience troubleshooting the types of issues that come up in IT Help Desk, Desktop Support, and System Administration environments.
 
 ## Technologies Used
 
@@ -35,11 +34,15 @@ My goal was to get more comfortable troubleshooting the types of issues that com
 
 I created a Windows Firewall rule blocking outbound UDP traffic on port 53 to simulate a DNS failure.
 
-After DNS queries started timing out, I removed the rule and tested again to verify that DNS resolution was restored.
+After applying the rule, DNS queries timed out. I removed the firewall rule and tested again to confirm DNS resolution was restored.
 
-**Result:** Identified and resolved a DNS issue caused by a firewall restriction.
+**Result:** Identified and resolved a DNS connectivity issue caused by a firewall restriction.
+
+**DNS Failure**
 
 ![DNS Firewall Block](02-DNS-Firewall-Block-and-Timeout.png)
+
+**DNS Resolution Restored**
 
 ![DNS Resolution Restored](03-DNS-Firewall-Removal-and-Resolution-Restored.png)
 
@@ -51,27 +54,37 @@ I added a temporary hostname mapping, flushed the DNS cache, and verified the re
 
 **Result:** Verified how local hostname mappings affect Windows name resolution.
 
+**Hosts File Modification**
+
 ![Hosts File Modification](04-DNS-Hosts-File-Modification-and-Cache-Flush.png..png)
+
+**Hosts File Restoration**
 
 ![Hosts File Restoration](05-Hosts-File-Restoration-and-DNS-Verification.png)
 
 ### 3. DNS Connectivity Testing
 
-I used PowerShell to test TCP connectivity to the DNS server on port 53 and reviewed the Windows client's DNS settings.
+I used PowerShell to test TCP connectivity to the DNS server on port 53 and reviewed the Windows client's DNS configuration.
 
 **Result:** Confirmed successful TCP connectivity to the DNS server at 172.16.0.4.
 
-![DNS Connectivity](06-DNS-Port-53-Connectivity-and-Client-Configuration.png)
+![DNS Connectivity Testing](06-DNS-Port-53-Connectivity-and-Client-Configuration.png)
 
 ### 4. Hostname Resolution Troubleshooting
 
 I tested the domain controller using both its short hostname and fully qualified domain name (FQDN).
 
-The short hostname initially failed during a DNS-only lookup, while the full hostname resolved successfully. I also used Windows hostname resolution tools to investigate the difference.
+The short hostname initially failed during a DNS-only lookup, while the full hostname resolved successfully.
+
+I also used Windows hostname resolution tools to investigate the difference.
 
 **Result:** Practiced troubleshooting hostname resolution and verifying DNS client behavior.
 
+**Hostname Troubleshooting**
+
 ![Hostname Troubleshooting](07-DNS-Hostname-Resolution-Troubleshooting.png)
+
+**Hostname Resolution Verification**
 
 ![Hostname Verification](08-DNS-Short-Hostname-Resolution-Verification.png)
 
@@ -102,24 +115,24 @@ I also checked LDAP SRV records to confirm that Active Directory services were d
 
 - Windows desktop and server troubleshooting
 - DNS and TCP/IP networking
-- PowerShell administration
+- PowerShell administration and diagnostics
 - Windows Firewall configuration
-- Active Directory troubleshooting
-- Network connectivity testing
+- Active Directory and domain controller discovery
 - Hostname resolution and DNS records
+- Network connectivity testing
 - Technical documentation and problem resolution
 
 ## Key Takeaways
 
-This lab helped me understand how DNS issues can be caused by firewall restrictions, client settings, and hostname resolution problems.
+This lab helped me understand that DNS problems can come from several different sources, including firewall rules, client settings, and hostname resolution.
 
-I gained more hands-on experience using PowerShell to investigate issues, identify possible causes, apply fixes, and verify that everything works afterward.
+I gained more experience using PowerShell to investigate issues, identify potential causes, apply fixes, and verify that everything works afterward.
 
 I'm continuing to build my technical skills through hands-on projects focused on IT support, Windows administration, networking, and cybersecurity.
 
 ---
 
-Jordan Minlend
+**Jordan Minlend**
 
 CompTIA Security+ Certified
 
